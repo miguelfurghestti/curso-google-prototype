@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.css'
 
 import { Link } from 'react-router-dom'
 
 import { IoMdApps } from "react-icons/io";
-import { Avatar } from '@material-ui/core'
+import { Avatar, Input } from '@material-ui/core'
 
 import Search from '../../components/Search';
+import { cleanup } from '@testing-library/react';
 
 function Home() {
+    const [ seed, setSeed] = useState(0)
+
+    useEffect(() => {
+      setSeed(Math.floor(Math.random() * 5000))
+    }, [])
+
   return (
     <div className='home'>
         <div className='home__header'>
@@ -24,7 +31,7 @@ function Home() {
                 <IoMdApps size={25} />
                 <Avatar 
                 className='home__avatar'
-                src='https://avatars.githubusercontent.com/u/85628259?v=4'
+                src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=${seed}`}
                 alt='Miguel Furghestti' />
             </div>
         </div>
