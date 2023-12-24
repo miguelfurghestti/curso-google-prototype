@@ -4,10 +4,9 @@ import './home.css'
 import { Link } from 'react-router-dom'
 
 import { IoMdApps } from "react-icons/io";
-import { Avatar, Input } from '@material-ui/core'
+import { Avatar } from '@material-ui/core'
 
 import Search from '../../components/Search';
-import { cleanup } from '@testing-library/react';
 
 function Home() {
     const [ seed, setSeed] = useState(0)
