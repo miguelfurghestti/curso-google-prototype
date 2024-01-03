@@ -57,3 +57,7 @@
     box-shadow: #e1e2e2 0px 1px;
     cursor: pointer;
 }
+
+.search__buttonsHidden {
+    display: none !important;
+}
